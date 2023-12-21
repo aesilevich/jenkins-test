@@ -20,7 +20,13 @@ pipeline {
         stage('Build') {
             steps {
                 dir('ScadeSwift') {
-                    git url: 'git@github.com:FLORG1/ScadeSwift.git', branch: ${env.BRANCH_NAME}
+                    checkout([
+                        $class: 'GitSCM',
+                        branches: scm.branches,
+                        doGenerateSubmoduleConfigurations: true,
+                        extensions: scm.extensions + [[$class: 'SubmoduleOption', parentCredentials: true]],
+                        userRemoteConfigs: scm.userRemoteConfigs
+                    ])
                 }
                 sh 'echo VERSION $SWIFT_VERSION'
             }

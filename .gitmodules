@@ -1,0 +1,3 @@
+[submodule "ScadeSwift"]
+	path = ScadeSwift
+	url = git@github.com:FLORG1/ScadeSwift.git
