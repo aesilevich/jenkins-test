@@ -20,7 +20,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir('ScadeSwift') {
-                    git url: 'git@github.com:FLORG1/ScadeSwift.git', '${env.BRANCH_NAME}'
+                    git url: 'git@github.com:FLORG1/ScadeSwift.git', branch: '${env.BRANCH_NAME}'
                 }
                 sh 'echo VERSION $SWIFT_VERSION'
             }
