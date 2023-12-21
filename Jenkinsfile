@@ -3,6 +3,10 @@ def SWIFT_BRANCH_VERSION = "x-${env.BRANCH_NAME}".split("-")[2]
 pipeline {
     agent any
 
+    options {
+        skipDefaultCheckout()
+    }
+
     triggers {
         pollSCM 'H/10 * * * *'
     }
