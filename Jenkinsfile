@@ -33,7 +33,10 @@ pipeline {
                     def VAR = "aaa"
                 }
                 sh 'echo VERSION: $SWIFT_VERSION, BRANCH: ${X_BRANCH_NAME}'
-                sh 'echo VAR: $VAR'
+                echo "Echo var: ${VAR}"
+                echo "Echo branch: ${X_BRANCH_NAME}"
+                sh 'sh echo VAR: ${VAR}'
+                sh 'sh echo 2 VAR: ' + ${VAR}
             }
         }
     }
