@@ -13,7 +13,7 @@ pipeline {
         APPLE_PASSWORD = credentials('apple-password')
         APPLE_SIGN_ID = credentials('apple-sign-id')
         APPLE_SIGN_INSTALLER_ID = credentials('apple-sign-installer-id')
-        SWIFT_VERSION = '5.9'
+        SWIFT_BRANCH_VERSION = "${SWIFT_BRANCH_VERSION}"
     }
 
     stages {
