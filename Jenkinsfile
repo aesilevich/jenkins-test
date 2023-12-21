@@ -1,5 +1,5 @@
 def SWIFT_VERSION = "5.9"
-def X_BRANCH_NAME = "x-${env.BRANCH_NAME}".split("-")[1]
+def X_BRANCH_NAME = "x-${env.BRANCH_NAME}".split("-")[2]
 
 pipeline {
     agent any
