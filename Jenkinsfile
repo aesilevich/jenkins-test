@@ -1,4 +1,4 @@
-def SWIFT_VERSION = "x-${env.BRANCH_NAME}".split("-")[2]
+def SWIFT_BRANCH_VERSION = "x-${env.BRANCH_NAME}".split("-")[2]
 
 pipeline {
     agent any
@@ -31,8 +31,10 @@ pipeline {
                 script {
                     def VAR = "aaa"
                 }
-                sh "echo sh verion: ${SWIFT_VERSION}"
-                echo "echo version: ${SWIFT_VERSION}"
+                sh "echo sh verion: ${SWIFT_BRANCH_VERSION}"
+                sh '''
+echo sh multiline version: ${SWIFT_BRANCH_VERSION}
+'''
             }
         }
     }
