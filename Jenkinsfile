@@ -1,4 +1,4 @@
-def SWIFT_VERSION = '5.9'
+def SWIFT_VERSION = "5.9"
 
 pipeline {
     agent any
