@@ -1,4 +1,5 @@
 def SWIFT_VERSION = "5.9"
+def X_BRANCH_NAME = "${env.BRANCH_NAME}"
 
 pipeline {
     agent any
@@ -28,7 +29,7 @@ pipeline {
                         userRemoteConfigs: scm.userRemoteConfigs
                     ])
                 }
-                sh 'echo VERSION $SWIFT_VERSION'
+                sh 'echo VERSION: $SWIFT_VERSION, BRANCH: ${X_BRANCH_NAME}'
             }
         }
     }
