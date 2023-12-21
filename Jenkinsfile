@@ -29,7 +29,9 @@ pipeline {
                         userRemoteConfigs: scm.userRemoteConfigs
                     ])
                 }
-                def VAR = "aaa"
+                script {
+                    def VAR = "aaa"
+                }
                 sh 'echo VERSION: $SWIFT_VERSION, BRANCH: ${X_BRANCH_NAME}'
                 sh 'echo VAR: $VAR'
             }
