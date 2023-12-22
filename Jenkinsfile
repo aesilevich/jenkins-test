@@ -1,6 +1,6 @@
 def SWIFT_BRANCH_VERSION = "${env.BRANCH_NAME}".split("-")[1]
-def SWIFT_PACKAGE_VERSION = "5.9.2"
-def SWIFT_PACKAGE_VERSION_BRANCH = "${SWIFT_PACKAGE_VERSION}".split(".")[0]
+def SWIFT_PACKAGE_VERSION = "5-9-2"
+def SWIFT_PACKAGE_VERSION_BRANCH = "${SWIFT_PACKAGE_VERSION}".split("-")[0]
 
 pipeline {
     agent any
