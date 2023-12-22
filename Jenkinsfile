@@ -1,4 +1,7 @@
 def SWIFT_BRANCH_VERSION = "x-${env.BRANCH_NAME}".split("-")[2]
+def SWIFT_PACKAGE_VERSION = "5.9.2"
+def SWIFT_PACKAGE_VERSION_COMPONENTS = "${SWIFT_PACKAGE_VERSION}".split(".")
+def SWIFT_PACKAGE_VERSION_BRANCH = SWIFT_PACKAGE_VERSION_COMPONENTS[0] + SWIFT_PACKAGE_VERSION_COMPONENTS[1]
 
 pipeline {
     agent any
@@ -35,10 +38,7 @@ pipeline {
                 script {
                     def VAR = "aaa"
                 }
-                sh "echo sh verion: ${SWIFT_BRANCH_VERSION}"
-                sh '''
-echo sh multiline version: ${SWIFT_BRANCH_VERSION}
-'''
+                sh "echo sh SWIFT_PACKAGE_VERSION_BRANCH: ${SWIFT_PACKAGE_VERSION_BRANCH}"
             }
         }
     }
